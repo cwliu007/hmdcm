@@ -2,7 +2,6 @@
 Liu, C.-W. (2026). Bayesian inference for dynamic Q-matrices and attribute trajectories in hidden Markov diagnostic classification models. British Journal of Mathematical and Statistical Psychology. https://doi.org/10.1111/bmsp.70028
 
 # R Code for the Data Analyses of Problems in Elementary Probability Theory (see Table 20)
-```
 1.	deps <- c("RcppTN","abind","clue","coda","doParallel","furrr","pgdraw","posterior","psych","mvtnorm","pks","edmdata")
 2.	install.packages(setdiff(deps, rownames(installed.packages())))
 3.	path <- "D:\\hmdcm_0.1.0.zip" # <--- modify the path on your end
@@ -23,4 +22,3 @@ Liu, C.-W. (2026). Bayesian inference for dynamic Q-matrices and attribute traje
 18.	a$est$beta$time1$mean # item parameter estimates at Time 1
 19.	a$est_full$eta$time1$mean # item response probability estimates at Time 1
 20.	a$waic_overall$waic # WAIC
-```
