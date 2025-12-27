@@ -1,4 +1,4 @@
-# This is hmdcm packaged developed in the following open access paper:
+# This is hmdcm package developed in the following open access paper:
 Liu, C.-W. (2026). Bayesian inference for dynamic Q-matrices and attribute trajectories in hidden Markov diagnostic classification models. British Journal of Mathematical and Statistical Psychology. https://doi.org/10.1111/bmsp.70028
 
 # R Code for the Data Analyses of Problems in Elementary Probability Theory (see Table 20)
