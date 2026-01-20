@@ -47,7 +47,7 @@ mean(1 * (a$est_full$attribute[[1]]$mean > 0.5) == extract(sim, what = "attribut
 a$waic
 ```
 
-# R Code for the Data Analyses of Problems in Elementary Probability Theory (two time point dataset) (same as Table 20)
+# Data Analyses of Problems in Elementary Probability Theory (two time point dataset) (same as Table 20)
 > [!NOTE]
 > Type `?hmdmc::hmdmc` for argument help in R.
 > 
