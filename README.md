@@ -1,7 +1,53 @@
 # This is the hmdcm package, developed in the following open access paper:
 Liu, C.-W. (2026). Bayesian inference for dynamic Q-matrices and attribute trajectories in hidden Markov diagnostic classification models. *British Journal of Mathematical and Statistical Psychology*. https://doi.org/10.1111/bmsp.70028
 
-# R Code for the Data Analyses of Problems in Elementary Probability Theory (same as Table 20)
+# A Quick Example:
+```
+# Simulate item responses using GDINA package (single time point)
+install.packages(setdiff("GDINA", rownames(installed.packages())))
+library("GDINA")
+set.seed(12345)
+N <- 500
+Q <- matrix(c(
+  1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1,
+  0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1
+), 20, 2)
+J <- nrow(Q)
+gs <- data.frame(guess = rep(0.1, J), slip = rep(0.1, J))
+sim <- simGDINA(N, Q, gs.parm = gs, model = "GDINA", gs.args = list(mono.constraint = TRUE))
+res <- extract(sim, what = "dat")
+
+# Estimate parameters using hmdcm
+library(hmdcm)
+times <- system.time(
+  a <- hmdcm(
+    list(res),
+    K = ncol(Q),
+    itemtype_string = list(rep("SDCM", J)),
+    QQ_target = list(Q),
+    burnin = 10000,
+    keep = 10000,
+    rand.seed = 1
+  )
+)
+
+# Evaluate Q-matrix recovery
+mean(a$est_full$QQ_sample[[1]]$median == Q)
+
+# Check item response probabilities
+a$est_full$eta[[1]]$mean
+
+# Check item parameters (compare to true delta)
+a$est_full$delta[[1]]$mean
+
+# Attribute recovery accuracy
+mean(1 * (a$est_full$attribute[[1]]$mean > 0.5) == extract(sim, what = "attribute"))
+
+# WAIC
+a$waic
+```
+
+# R Code for the Data Analyses of Problems in Elementary Probability Theory (two time point dataset) (same as Table 20)
 > [!NOTE]
 > Type `?hmdmc::hmdmc` for argument help in R.
 > 
