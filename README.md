@@ -1,9 +1,9 @@
 # This is the hmdcm package, developed in the following open access paper:
 Liu, C.-W. (2026). Bayesian inference for dynamic Q-matrices and attribute trajectories in hidden Markov diagnostic classification models. *British Journal of Mathematical and Statistical Psychology*. https://doi.org/10.1111/bmsp.70028
 
-# A Quick Example:
+# A Quick Example (Single Time Point Simulated Data):
 ```
-# Simulate item responses using GDINA package (single time point)
+# Simulate item responses using GDINA package
 install.packages(setdiff("GDINA", rownames(installed.packages())))
 library("GDINA")
 set.seed(12345)
