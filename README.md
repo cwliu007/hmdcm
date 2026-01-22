@@ -8,6 +8,7 @@ deps <- c("RcppTN","abind","clue","coda","doParallel","furrr","pgdraw","posterio
 install.packages(setdiff(deps, rownames(installed.packages())))
 path <- "D:\hmdcm_0.1.0.zip" # <--- modify the path on your end
 utils::install.packages(path, repos = NULL, type = "binary")
+
 # Simulate item responses using GDINA package
 install.packages(setdiff("GDINA", rownames(installed.packages())))
 library("GDINA")
