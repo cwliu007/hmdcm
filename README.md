@@ -3,6 +3,11 @@ Liu, C.-W. (2026). Bayesian inference for dynamic Q-matrices and attribute traje
 
 # A Quick Example (single-time-point simulated data):
 ```
+# Install hmdcm
+deps <- c("RcppTN","abind","clue","coda","doParallel","furrr","pgdraw","posterior","psych","mvtnorm","pks","edmdata")
+install.packages(setdiff(deps, rownames(installed.packages())))
+path <- "D:\hmdcm_0.1.0.zip" # <--- modify the path on your end
+utils::install.packages(path, repos = NULL, type = "binary")
 # Simulate item responses using GDINA package
 install.packages(setdiff("GDINA", rownames(installed.packages())))
 library("GDINA")
