@@ -41,7 +41,7 @@ times <- system.time(
 mean(a$est_full$QQ_sample[[1]]$median == Q)
 
 # Check item response probabilities
-a$est_full$eta[[1]]$mean
+a$est_full$eta[[1]]$mean  # see a$est$eta$time1$mean where some entries are masked by Q point estimates.
 
 # Check item parameters (compare to true delta)
 a$est_full$delta[[1]]$mean
