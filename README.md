@@ -6,8 +6,8 @@ Liu, C.-W. (2026). Bayesian inference for dynamic *Q* matrices and attribute tra
 # Install hmdcm
 deps <- c("RcppTN","abind","clue","coda","doParallel","furrr","pgdraw","posterior","psych","mvtnorm","pks","edmdata")
 install.packages(setdiff(deps, rownames(installed.packages())))
-path <- "D:\hmdcm_0.1.0.zip" # <--- modify the path on your end
-utils::install.packages(path, repos = NULL, type = "binary")
+url <- "https://raw.githubusercontent.com/cwliu007/hmdcm/main/hmdcm_0.1.0.zip"
+install.packages(url, repos = NULL, type = "binary")
 
 # Simulate item responses using GDINA package
 install.packages(setdiff("GDINA", rownames(installed.packages())))
@@ -60,8 +60,8 @@ a$waic
 > Burn-in period `burnin=50000` and collection period `keep=100000` are set large in this example, which consumes a lot of memory!
 1.	deps <- c("RcppTN","abind","clue","coda","doParallel","furrr","pgdraw","posterior","psych","mvtnorm","pks","edmdata")
 2.	install.packages(setdiff(deps, rownames(installed.packages())))
-3.	path <- "D:\\hmdcm_0.1.0.zip" # <--- modify the path on your end
-4.	utils::install.packages(path, repos = NULL, type = "binary")
+3.	url <- "https://raw.githubusercontent.com/cwliu007/hmdcm/main/hmdcm_0.1.0.zip"
+4.	install.packages(url, repos = NULL, type = "binary")
 5.	library("pks"); data("probability"); probability <- as.data.frame(probability)
 6.	f <- do.call(cbind, probability[,c("b101", "b102", "b103", "b104", "b105", "b106", "b107", "b108", "b109", "b110", "b111", "b112")])
 7.	s <- do.call(cbind, probability[,c("b201", "b202", "b203", "b204", "b205", "b206", "b207", "b208", "b209", "b210", "b211", "b212")])
